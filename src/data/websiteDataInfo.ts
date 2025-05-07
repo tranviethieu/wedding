@@ -4,7 +4,7 @@ import { OurStoryModel } from "@/types/ourStory";
 
 export const CoupleInfo: CoupleModel = {
   male: {
-    fullName: "Đỗ Trinh",
+    fullName: "Việt Hiếu",
     avatar: {
       src: "/images/avatars/male_1_1.jpg",
       with: 500,
@@ -16,7 +16,7 @@ export const CoupleInfo: CoupleModel = {
     mapAddress: "https://maps.app.goo.gl/qvcKc5QoV1A27Hd57",
   },
   female: {
-    fullName: "Lê Phương",
+    fullName: "Đỗ Phương",
     avatar: {
       src: "/images/avatars/female_1_1.jpg",
       with: 500,
@@ -30,7 +30,7 @@ export const CoupleInfo: CoupleModel = {
 };
 
 export const WeddingInfo: WeddingModel = {
-  weddingDate: "2024/11/10",
+  weddingDate: "2025/11/10",
 };
 
 export const OurStoryInfos: OurStoryModel[] = [
@@ -46,7 +46,7 @@ export const OurStoryInfos: OurStoryModel[] = [
       "Sau bao nhiêu ngày chờ đợi, tình yêu của chúng ta đơm hoa kết trái bằng một lễ cưới ấm áp và ngọt ngào. Ngày hôm nay, em sẽ chính thức là cô dâu của anh và sau này là mẹ của các con anh. Cảm ơn vì mình luôn là một phần trong cuộc sống của nhau. Anh mong sau này dù tương lai có như thế nào thì chúng ta luôn nhớ rằng “tình yêu không phải là nhìn chằm chằm vào nhau, mà là cùng nhau nhìn về một hướng”.",
   },
   {
-    date: "2024/09/02",
+    date: "2024/05/01",
     caption: "",
     image: {
       src: "/images/stories/3.jpg",
@@ -57,7 +57,7 @@ export const OurStoryInfos: OurStoryModel[] = [
       "Anh cầu hôn em sau khi chúng ta đã công khai tình yêu của chúng mình tới gia đình và bạn bè. Cảm giác hạnh phúc vỡ òa khi em nói lời đồng ý. Chúng ta thật hạnh phúc và may mắn vì hai bên gia đình và bạn bè thân thiết đều ủng hộ và gửi lời chúc mừng tới hai đứa. Hai đứa bắt đầu ấp ủ ý tưởng và những kế hoạch chuẩn bị về một hôn lễ giản dị, ấm áp và ngọt ngào.",
   },
   {
-    date: "2023/10/27",
+    date: "2024/03/31",
     caption: "",
     image: {
       src: "/images/stories/2.jpg",
@@ -68,7 +68,7 @@ export const OurStoryInfos: OurStoryModel[] = [
       "Buổi hẹn hò đầu tiên của chúng ta tại quán Nhà gỗ café. Khi anh đến thì đã thấy một cô gái xinh xắn, nhỏ nhắn ngồi bên góc bàn cạnh cửa sổ, chúng ta có những giây phút chuyện trò ban đầu thật ngại ngùng. Mãi sau này khi chúng ta chính thức yêu nhau, em hay đùa rằng “buổi hẹn đầu tiên thấy anh cũng ít nói, nhưng em quay sang thấy anh đẹp trai nên lại tiếp tục cố gắng gợi chuyện”. Anh không nghĩ rằng nhan sắc bình thường của anh cũng là một thứ vũ khí lợi hại đến thế😊. Và anh cũng hiểu ra rằng, tình yêu thực sự phải bắt đầu từ sự cố gắng của cả hai phía.",
   },
   {
-    date: "2023/10/20",
+    date: "2024/02/16",
     caption: "",
     image: {
       src: "/images/stories/1.jpg",

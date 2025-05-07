@@ -61,11 +61,7 @@ export function FixedIcon() {
         </div>
       </div>
 
-      <audio
-        src="/music/background.mp3"
-        ref={mp3Ref}
-        className="hidden"
-      ></audio>
+      <audio src="/music/Xa-La.mp3" ref={mp3Ref} className="hidden"></audio>
     </>
   );
 }
