@@ -1,0 +1,33 @@
+.typing-animation {
+    --typing-animation-delay: 0;
+
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    // border-right: 2px solid #7E2EA0;
+    animation: typing 3s steps(25, end), cursor .2s steps(25, end) infinite;
+    animation-delay: calc(var(--typing-animation-delay) * 1s);
+
+    @for $i from 1 through 20 {
+        &_delay-#{$i}s {
+            --typing-animation-delay: #{$i};
+        }
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%;
+    }
+
+}
+
+@keyframes cursor {
+    50% {
+        border-color: transparent
+    }
+}
