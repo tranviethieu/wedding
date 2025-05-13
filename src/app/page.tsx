@@ -2,10 +2,9 @@
 import { LoadingInit } from "@/components/LoadingInit";
 import Menu from "@/components/Menu";
 import { WeddingEvent } from "@/components/WeddingEvent";
-//import { useRouter } from "next/navigation";
 import Snowfall from "@/components/Snowfall";
 import { OurStory } from "@/components/OurStory";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { HeroSection } from "@/components/HeroSection/HeroSection";
 import { CoupleInfo, WeddingInfo } from "@/data/websiteDataInfo";
 import { CoupleInvite } from "@/components/CoupleInvite";
@@ -19,6 +18,8 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
   const [coupleInfo] = useState(CoupleInfo);
   const [weddingInfo] = useState(WeddingInfo);
+  const scrollUpRef = useRef() as any;
+  const scrollDownRef = useRef() as any;
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
@@ -58,9 +59,13 @@ export default function Home() {
       });
     }, 4000);
   }, []);
+  const goScrollDown = () => {
+    if (scrollDownRef.current) {
+      scrollDownRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
     <>
-      {" "}
       <div
         id="main"
         className="h-full w-full bg-red-50 relative overflow-x-hidden font-[family-name:var(--font-geist-sans)]"
@@ -72,18 +77,21 @@ export default function Home() {
         <HeroSection
           coupleInfo={coupleInfo}
           weddingInfo={weddingInfo}
-        ></HeroSection>
+          scrollUpRef={scrollUpRef}
+          onScrollDownClick={goScrollDown}
+        />
         {!isLoading && (
           <>
             <CoupleInvite
               coupleInfo={coupleInfo}
               weddingInfo={weddingInfo}
-            ></CoupleInvite>
-            <WeddingEvent></WeddingEvent>
-            <WebsiteInfo></WebsiteInfo>
-            <OurStory></OurStory>
-            <ConfirmJoin></ConfirmJoin>
-            <Gallery></Gallery>
+              scrollDownRef={scrollDownRef}
+            />
+            <WeddingEvent />
+            <WebsiteInfo />
+            <OurStory />
+            <ConfirmJoin />
+            <Gallery />
             <SendWish
               wishes={[
                 {
@@ -95,11 +103,11 @@ export default function Home() {
                 },
               ]}
             ></SendWish>
-            <Thanks></Thanks>
+            <Thanks />
           </>
         )}
       </div>
-      {!isLoading && <FixedIcon></FixedIcon>}
+      {!isLoading && <FixedIcon />}
     </>
   );
 }

@@ -8,12 +8,17 @@ import { SectionTitle } from "@/components/shareds/SectionTitle";
 interface CoupleInviteProps {
   coupleInfo: CoupleModel;
   weddingInfo: WeddingModel;
+  scrollDownRef: any;
 }
 
-export function CoupleInvite({ coupleInfo }: CoupleInviteProps) {
+export function CoupleInvite({ coupleInfo, scrollDownRef }: CoupleInviteProps) {
   return (
     <>
-      <section id="couple" className="container mx-auto overflow-x-hidden">
+      <section
+        id="couple"
+        className="container mx-auto overflow-x-hidden"
+        ref={scrollDownRef}
+      >
         <div className="my-10 lg:my-32 px-4 lg:px-10 w-full xl:w-4/5  mx-auto">
           <div className="w-full flex flex-col justify-center">
             <div className="flex flex-col items-center mb-12 md:mb-28">

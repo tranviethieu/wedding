@@ -8,12 +8,20 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 interface HeroProps {
   coupleInfo: CoupleModel;
   weddingInfo: WeddingModel;
+  scrollUpRef: any;
+  onScrollDownClick: Function | any;
 }
 
-export function HeroSection({ coupleInfo, weddingInfo }: HeroProps) {
+export function HeroSection({
+  coupleInfo,
+  weddingInfo,
+  scrollUpRef,
+  onScrollDownClick,
+}: HeroProps) {
   return (
     <>
       <div
+        ref={scrollUpRef}
         id="home"
         className="relative bg-gradient-to-r from-purple-600 to-blue-600 h-screen text-white overflow-hidden"
       >
@@ -79,7 +87,10 @@ export function HeroSection({ coupleInfo, weddingInfo }: HeroProps) {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-5 right-[45%] lg:right-1/2 z-20 flex flex-col justify-center p-4 rounded-full items-center text-center border-2 h-16">
+        <div
+          className="absolute cursor-pointer bottom-5 right-[45%] lg:right-1/2 z-20 flex flex-col justify-center p-3 rounded-full items-center text-center border-2 h-14 "
+          onClick={onScrollDownClick}
+        >
           <div className="relative top-3 text-2xl font-bold animate__animated animate__slideInDown animate__infinite">
             .
           </div>

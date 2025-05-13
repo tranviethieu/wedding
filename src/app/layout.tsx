@@ -5,6 +5,7 @@ import "./globals.css";
 import "animate.css";
 // pages/_app.tsx or app/layout.tsx (Next.js 13+)
 import "../styles/globals.scss";
+import { Metadata as myMetadata } from "@/data/websiteDataInfo";
 
 const parisienne = Dancing_Script({
   subsets: ["latin"],
@@ -13,17 +14,31 @@ const parisienne = Dancing_Script({
 });
 
 export const metadata: Metadata = {
-  title: "The Wedding - Fariz & Rika", // Cập nhật tiêu đề chung cho toàn trang
-  description: "We invited you to celebrate our wedding!",
+  title: myMetadata.title,
+  description: myMetadata.description,
+  keywords: myMetadata.keywords,
+  authors: [{ name: "Hieu&Phuong" }],
+  icons: {
+    icon: {
+      url: myMetadata.icon.src,
+      type: myMetadata.icon.type,
+    },
+  },
+  viewport:
+    "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no",
   openGraph: {
-    url: "https://rikafariz-wedding.vercel.app",
+    title: myMetadata.title,
+    description: myMetadata.description,
+    url: myMetadata.url,
+    type: "website",
     images: [
       {
-        url: "https://rikafariz-wedding.vercel.app/img/web-thumb.jpg",
+        url: myMetadata.url + myMetadata.image.src,
+        type: myMetadata.image.type,
+        width: 100,
+        height: 100,
       },
     ],
-    title: "The Wedding - Fariz & Rika",
-    description: "We invited you to celebrate our wedding!",
   },
 };
 export default function RootLayout({
