@@ -4,6 +4,7 @@ import { WeddingModel } from "@/types/wedding";
 import { getDay, getMonth, getYear } from "@/utils/date";
 import { CSSProperties, useState } from "react";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
+import { TypeAnimation } from "react-type-animation";
 
 interface HeroProps {
   coupleInfo: CoupleModel;
@@ -29,23 +30,48 @@ export function HeroSection({
 
         <div className="container mx-auto relative z-10 flex flex-col justify-center items-center h-full text-center p-2">
           <div className={"mb-10 flex items-center space-x-2 text-5xl"}>
-            <p className="font-bold leading-tight mb-4 w-28 animate__animated animate__slideInLeft animate__delay-3s sm:w-auto font-[Dancing_Script]">
+            <div
+              className="font-bold leading-tight mb-4 w-28 sm:w-auto"
+              data-aos="fade-right"
+              data-aos-delay="3000"
+              data-aos-duration="3000"
+            >
               {coupleInfo.male.fullName}
-            </p>
-            <p className="font-bold leading-tight mb-4 animate__animated animate__slideInDown animate__delay-3s">
+            </div>
+            <div
+              className="font-bold leading-tight mb-4"
+              data-aos="zoom-in-down"
+              data-aos-delay="3000"
+              data-aos-duration="3000"
+            >
               &
-            </p>
-            <p className="font-bold leading-tight mb-4 w-28 sm:w-auto animate__animated animate__slideInRight animate__delay-3s font-[Dancing_Script]">
+            </div>
+            <div
+              className="font-bold leading-tight mb-4 w-28 sm:w-auto font-[Dancing_Script]"
+              data-aos="fade-left"
+              data-aos-delay="3000"
+              data-aos-duration="3000"
+            >
               {coupleInfo.female.fullName}
-            </p>
+            </div>
           </div>
-          <div className="text-base sm:text-lg md:text-2xl text-gray-300 mb-12 sm:mb-20 tracking-[5px] border-t-2 border-b-2 py-3 px-5 animate__animated animate__fadeIn animate__delay-4s">
-            <p className="typing-animation typing-animation_delay-4s">
+          <div className="text-base w-[340px] lg:w-[450px] min-h-[60px] sm:text-lg md:text-2xl text-gray-300 mb-12 sm:mb-20 tracking-[5px] border-t-2 border-b-2 py-3 px-5 ">
+            {/* <p className="typing-animation typing-animation_delay-4s">
               WE&#39;RE GETTING MARRIED
-            </p>
+            </p> */}
+            <TypeAnimation
+              sequence={[
+                4000, // ⏳ Delay 4 giây
+                "WE'RE GETTING MARRIED", // ✍️ Gõ dòng chữ
+              ]}
+              wrapper="p"
+              speed={60} // tốc độ gõ
+              //repeat={Infinity} // lặp vô hạn
+              //className="typing-animation"
+            />
           </div>
           <div className="relative flex space-x-5 sm:space-x-10 lg:space-x-20 font-serif ">
-            <div className="flex animate__animated animate__jackInTheBox animate__delay-3s">
+            <div className="flex">
               <div className="relative animate__animated animate__pulse animate__infinite">
                 <div className="heart bg-opacity-40 transform scale-100 sm:scale-[1.3] lg:scale-[1.4]"></div>
                 <div className="absolute w-full h-full -top-2.5 left-0 flex flex-col justify-center items-center">

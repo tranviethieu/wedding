@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import React, { FormEvent, useEffect, useState } from "react";
 import { WishesProps } from "@/types/wish";
@@ -31,24 +32,25 @@ export function SendWish({ wishes }: WishesProps) {
 
     setSubmitting(true);
     e.preventDefault();
-    // Fetching API endpoint
+
     try {
       const res = await fetch("/api/wish/create", {
         method: "POST",
         body: JSON.stringify(formState),
       });
-      await res.json();
+
+      const result = await res.json();
+
+      if (!res.ok) throw new Error(result.error || "Unknown error");
+
       setMessage("Cảm ơn đã gửi lời chúc cho chúng tôi.");
       setFormState({ name: "", emailOrPhone: "", wish: "" });
-      wishes.unshift(formState);
-      setSubmitting(false);
-      setTimeout(() => {
-        setMessage("");
-      }, 3000);
     } catch (e) {
       console.log(e);
-      setSubmitting(false);
       setMessage("Awww~. Gửi không thành công mất rồi. Hãy thử lại nhé.");
+    } finally {
+      setSubmitting(false);
+      setTimeout(() => setMessage(""), 3000);
     }
   };
 

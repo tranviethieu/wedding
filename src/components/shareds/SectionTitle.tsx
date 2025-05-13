@@ -1,4 +1,5 @@
 import React from "react";
+import { TypeAnimation } from "react-type-animation";
 
 interface SectionTitleProps {
   title: string;
@@ -19,11 +20,7 @@ export function SectionTitle({ title, quote, showDecor }: SectionTitleProps) {
           "w-full min-h-40 text-center flex flex-col items-center justify-center font-[Dancing_Script]"
         }
       >
-        <div
-          className={
-            " animated animate__fadeInDown animate__delay-1s  opacity-0"
-          }
-        >
+        <div data-aos="zoom-in-down">
           <h1 className="text-pink-400 font-black text-6xl md:text-7xl mb-6 ">
             {title}
           </h1>
@@ -49,7 +46,13 @@ function Quote({ quote }: QuoteProps) {
 
   return (
     <div className="text-center pt-8 animated">
-      <q className="italic md:text-lg lg:text-xl">{quote}</q>
+      <TypeAnimation
+        sequence={[quote]} // nội dung quote chạy từng chữ
+        wrapper="div"
+        speed={50}
+        className="italic md:text-lg lg:text-xl"
+        cursor={false}
+      />
     </div>
   );
 }

@@ -25,9 +25,10 @@ export function Gallery() {
             {galleries.map((_, index) => (
               <Image
                 key={index}
-                className={`  transition-all duration-1000 ease-linear animate__delay-${
-                  index + 1
-                }s  w-full h-full`}
+                className={`transition-all duration-1000 ease-linear w-full h-full`}
+                data-aos="fade-up"
+                data-aos-anchor-placement="center-center"
+                data-aos-delay={100 + (index + 1)}
                 src={`/images/galleries/${index + 1}.jpg`}
                 width={500}
                 height={500}

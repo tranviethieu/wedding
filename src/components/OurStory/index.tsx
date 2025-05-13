@@ -7,6 +7,7 @@ import { OurStoryModel } from "@/types/ourStory";
 import { SectionTitle } from "@/components/shareds/SectionTitle";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/outline";
 import { getDay, getMonth, getYear } from "@/utils/date";
+import { TypeAnimation } from "react-type-animation";
 
 export function OurStory() {
   const [stories] = useState(OurStoryInfos as OurStoryModel[]);
@@ -69,7 +70,12 @@ export function OurStory() {
               </div>
 
               <div className="our-story__image w-full h-full flex flex-col items-center justify-center">
-                <div className="w-full h-full lg:w-[500px] lg:h-[500px] 2xl:w-[650px] 2xl:h-[650px] relative animated opacity-0">
+                <div
+                  className="w-full h-full lg:w-[500px] lg:h-[500px] 2xl:w-[650px] 2xl:h-[650px] relative"
+                  data-aos="zoom-in-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
+                >
                   <Image
                     className={
                       "object-cover object-center w-full h-full  lg:rounded-full transition-all duration-700 ease-linear " +
@@ -124,7 +130,12 @@ export function OurStory() {
 
             <div className="w-full lg:w-1/2 relative bg-rose-100 h-full lg:h-screen flex items-center">
               <div className="w-full lg:w-2/3 mx-auto flex justify-center space-y-2 lg:space-y-10 flex-col px-6 pt-10 pb-8 lg:p-0">
-                <div className="flex items-end space-x-2 animated opacity-0">
+                <div
+                  className="flex items-end space-x-2"
+                  data-aos="zoom-in-up"
+                  data-aos-easing="linear"
+                  data-aos-duration="1500"
+                >
                   <div className="flex w-11 h-11 md:w-14 md:h-14 text-lg">
                     <p className="font-semibold">
                       {getDay(stories[currentIndex].date)}
@@ -141,28 +152,47 @@ export function OurStory() {
 
                 <div className="flex flex-col space-y-2 md:space-y-10 max-sm:pt-5">
                   {stories[currentIndex].caption && (
-                    <p className="text-2xl sm:text-3xl md:text-6xl font-bold animated opacity-0">
+                    <p
+                      className="text-2xl sm:text-3xl md:text-6xl font-bold"
+                      data-aos="zoom-in-up"
+                      data-aos-easing="linear"
+                      data-aos-duration="1500"
+                    >
                       {stories[currentIndex].caption}
                     </p>
                   )}
 
-                  <p className="text-xl font-[Dancing_Script] leading-8 text-justify animated opacity-0">
-                    {stories[currentIndex].content}
-                  </p>
+                  <div
+                    //className="text-xl font-[Dancing_Script] leading-8 text-justify"
+                    data-aos="zoom-in-up"
+                    data-aos-easing="linear"
+                    data-aos-duration="1500"
+                    className="min-h-[500px]"
+                  >
+                    <TypeAnimation
+                      key={currentIndex}
+                      sequence={[stories[currentIndex].content]}
+                      wrapper="p"
+                      speed={50}
+                      className="text-xl font-[Dancing_Script] leading-8 text-justify"
+                      cursor={false}
+                      repeat={0}
+                    />
+                  </div>
                 </div>
 
-                <div className="max-sm:absolute max-sm:top-9 max-sm:right-3 flex space-x-0 cursor-pointer">
+                <div className="max-sm:absolute max-sm:top-9 max-sm:right-3 flex space-x-2 cursor-pointer">
                   <div>
                     <ArrowLeftIcon
                       onClick={prev}
-                      className="p-2 max-sm:w-11 max-sm:h-11 w-14 h-14 hover:border hover:border-black"
-                    ></ArrowLeftIcon>
+                      className="p-2 max-sm:w-11 max-sm:h-11 w-14 h-14 rounded-full border border-transparent hover:border-black transition"
+                    />
                   </div>
                   <div>
                     <ArrowRightIcon
                       onClick={next}
-                      className="p-2 max-sm:w-11 max-sm:h-11 w-14 h-14 hover:border hover:border-black"
-                    ></ArrowRightIcon>
+                      className="p-2 max-sm:w-11 max-sm:h-11 w-14 h-14 rounded-full border border-transparent hover:border-black transition"
+                    />
                   </div>
                 </div>
               </div>
