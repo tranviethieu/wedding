@@ -43,10 +43,24 @@ export const useWishesListener = () => {
 
             // Chỉ gọi toast nếu lời chúc có thời gian gần với thời gian hiện tại (1 phút chẳng hạn)
             if (Math.abs(currentTime.getTime() - wishTime.getTime()) < 6000) {
-              toast.success(
-                `🎉 ${wish.name} vừa gửi lời chúc ${
-                  wish.wish ? wish.wish : ""
-                }!`
+              //   toast.success(
+              //     `🎉 ${wish.name} vừa gửi lời chúc ${
+              //       wish.wish ? wish.wish : ""
+              //     }!`
+              //   );
+              toast(
+                `💌 Bạn ${wish.name}: ${
+                  wish.wish ? wish.wish : "Chúc hai bạn hạnh phúc!"
+                }`,
+                {
+                  style: {
+                    backgroundColor: "#fff0f5",
+                    color: "#a52a2a",
+                    borderLeft: "5px solid #ff69b4",
+                    borderRadius: "12px",
+                    padding: "16px",
+                  },
+                }
               );
             }
           }

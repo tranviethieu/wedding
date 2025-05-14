@@ -42,7 +42,14 @@ export default function Home() {
   };
   return (
     <>
-      <ToastContainer />
+      <ToastContainer
+        position="top-right"
+        autoClose={4000}
+        hideProgressBar
+        closeOnClick
+        pauseOnHover
+        draggable
+      />
       <div
         id="main"
         className="h-full w-full bg-red-50 relative overflow-x-hidden font-[family-name:var(--font-dancing-script)]"
