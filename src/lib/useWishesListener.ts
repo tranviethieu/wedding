@@ -42,7 +42,7 @@ export const useWishesListener = () => {
             const wishTime = wish.dateCreated.toDate(); // Firebase Timestamp
 
             // Chỉ gọi toast nếu lời chúc có thời gian gần với thời gian hiện tại (1 phút chẳng hạn)
-            if (Math.abs(currentTime.getTime() - wishTime.getTime()) < 60000) {
+            if (Math.abs(currentTime.getTime() - wishTime.getTime()) < 6000) {
               toast.success(
                 `🎉 ${wish.name} vừa gửi lời chúc ${
                   wish.wish ? wish.wish : ""

@@ -158,12 +158,11 @@ export function SendWish({ wishes }: WishesProps) {
 
                     {/* Lời chúc gợi ý */}
                     <div
-                      className={`absolute right-0 top-10 w-full py-2 transform transition-all duration-500 shadow-md text-sm font-medium bg-white rounded-sm text-black
-      ${
-        isShowSuggest
-          ? "opacity-100 z-50 visible"
-          : "opacity-0 z-[-1] invisible"
-      }`}
+                      className={`absolute right-0 top-10 w-full py-2 transform transition-all duration-500 shadow-md text-sm font-medium bg-white rounded-sm text-black ${
+                        isShowSuggest
+                          ? "opacity-100 z-50 visible"
+                          : "opacity-0 z-[-1] invisible"
+                      }`}
                     >
                       <div className="w-full">
                         <input
@@ -190,10 +189,11 @@ export function SendWish({ wishes }: WishesProps) {
 
                     {/* Emoji picker */}
                     <div
-                      className={`absolute right-0 top-10 transition-all duration-500
-      ${
-        isShowEmoji ? "opacity-100 z-50 visible" : "opacity-0 z-[-1] invisible"
-      }`}
+                      className={`absolute right-0 top-10 transition-all duration-500 ${
+                        isShowEmoji
+                          ? "opacity-100 z-50 visible"
+                          : "opacity-0 z-[-1] invisible"
+                      }`}
                     >
                       <EmojiPicker onEmojiClick={onEmojiClick} />
                     </div>
@@ -204,28 +204,6 @@ export function SendWish({ wishes }: WishesProps) {
                     type="submit"
                     className="uppercase w-full flex items-center justify-center sm:px-5 md:px-10 hover:bg-pink-600 lg:px-16 py-3 bg-pink-500 rounded-full"
                   >
-                    {submitting && (
-                      <svg
-                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          stroke-width="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
-                    )}
                     Gửi lời chúc
                   </button>
                 </div>
