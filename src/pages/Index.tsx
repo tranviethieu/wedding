@@ -134,7 +134,7 @@ const Index = () => {
 
 const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex flex-col items-center justify-end md:justify-center pb-14 md:pb-0 relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
