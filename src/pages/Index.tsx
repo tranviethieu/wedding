@@ -134,7 +134,7 @@ const Index = () => {
 
 const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-end md:justify-center pb-14 md:pb-0 relative overflow-hidden">
+    <div className="h-screen flex flex-col items-center justify-end md:justify-center pb-14 md:pb-0 relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -143,7 +143,7 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
-
+      {/* /// */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
