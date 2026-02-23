@@ -11,11 +11,14 @@ const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
 
   useEffect(() => {
     if (autoPlay && audioRef.current) {
-      audioRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch(() => {
-        setIsPlaying(false);
-      });
+      audioRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch(() => {
+          setIsPlaying(false);
+        });
     }
   }, [autoPlay]);
 
@@ -32,18 +35,16 @@ const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
 
   return (
     <>
-      <audio
-        ref={audioRef}
-        src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-        loop
-        preload="auto"
-      />
+      <audio ref={audioRef} src="/nhac.mp3" loop preload="auto" />
       <button
         onClick={toggleMusic}
         className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold/90 backdrop-blur-sm shadow-wedding flex items-center justify-center hover:bg-gold transition-colors"
         aria-label={isPlaying ? "Tắt nhạc" : "Bật nhạc"}
       >
-        <div className={`${isPlaying ? "animate-spin" : ""}`} style={{ animationDuration: "3s" }}>
+        <div
+          className={`${isPlaying ? "animate-spin" : ""}`}
+          style={{ animationDuration: "3s" }}
+        >
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-burgundy to-burgundy/80 border-2 border-gold-light flex items-center justify-center relative">
             <div className="w-3 h-3 rounded-full bg-gold-light" />
             {!isPlaying && (

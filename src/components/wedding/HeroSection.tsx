@@ -18,7 +18,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content overlay */}
-      <div className="relative z-10 flex flex-col items-center justify-between min-h-screen w-full py-12 px-4">
+      <div className="relative z-10 flex flex-col items-center justify-between min-h-screen w-full py-12 pb-24 px-4">
         {/* Top: Save The Date / Wedding Invitation */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}

@@ -134,7 +134,7 @@ const Index = () => {
 
 const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
-    <div className="h-screen flex flex-col items-center justify-end md:justify-center pb-14 md:pb-0 relative overflow-hidden">
+    <div className="h-screen flex flex-col items-center justify-end md:justify-center pb-8 md:pb-0 relative overflow-hidden">
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -148,7 +148,7 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1.2, delay: 0.3 }}
-        className="text-center z-10 px-6"
+        className="text-center z-10 p-6"
       >
         <motion.p
           initial={{ opacity: 0, letterSpacing: "0.2em" }}
@@ -174,7 +174,7 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
             </span>
             <span className="w-12 md:w-20 h-px bg-gold opacity-60" />
           </div>
-          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream mb-8 drop-shadow-lg">
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream mb-2 drop-shadow-lg">
             Đỗ Phương
           </h1>
         </motion.div>
@@ -183,7 +183,7 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.3 }}
-          className="text-cream/70 font-body text-lg md:text-xl mb-10 italic"
+          className="text-cream/70 font-body text-lg md:text-xl mb-5 italic"
         >
           15 . 03 . 2026
         </motion.p>
