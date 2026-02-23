@@ -1,17 +1,18 @@
 import { motion } from "framer-motion";
-import heroImg from "@/assets/wedding-01.jpg";
+import heroImg from "@/assets/wedding-02.jpg";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden">
       {/* Full-screen background image */}
       <div className="absolute inset-0">
-        <img
+        <motion.img
           src={heroImg}
           alt="Việt Hiếu & Đỗ Phương"
-          className="w-full h-full object-cover"
-          loading="eager"
-          decoding="sync"
+          className="w-full h-full object-cover object-center md:object-[center_20%]"
+          initial={{ scale: 1.05 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-black/60" />
       </div>
