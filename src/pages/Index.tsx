@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import dividerGold from "@/assets/divider-gold.png";
 import heroImg from "@/assets/wedding-08.jpg";
+import heart from "@/assets/heart-1.png";
 import w01 from "@/assets/wedding-01.jpg";
 import w02 from "@/assets/wedding-02.jpg";
 import w03 from "@/assets/wedding-03.jpg";
@@ -11,7 +12,7 @@ import w05 from "@/assets/wedding-05.jpg";
 import w06 from "@/assets/wedding-06.jpg";
 import w07 from "@/assets/wedding-07.jpg";
 import w09 from "@/assets/wedding-09.jpg";
-import coupleIllustration from "@/assets/couple-illustration.png";
+//import coupleIllustration from "@/assets/couple-illustration.png";
 import floralTop from "@/assets/floral-top.png";
 import floralBottom from "@/assets/floral-bottom.png";
 import HeroSection from "@/components/wedding/HeroSection";
@@ -35,7 +36,7 @@ const allImages = [
   w07,
   w09,
   dividerGold,
-  coupleIllustration,
+
   floralTop,
   floralBottom,
 ];
@@ -93,7 +94,7 @@ const Index = () => {
           transition={{ duration: 1.5, repeat: Infinity }}
           className="text-gold font-display text-3xl"
         >
-          ♥
+          <img src={heart} alt="heart1" className="w-8 h-8" />
         </motion.div>
         <p className="text-muted-foreground font-body text-sm tracking-widest uppercase">
           Đang tải...
@@ -169,7 +170,7 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
           <div className="flex items-center justify-center gap-4 my-4">
             <span className="w-12 md:w-20 h-px bg-gold opacity-60" />
             <span className="font-display text-2xl md:text-3xl text-gold animate-heart-beat">
-              ♥
+              <img src={heart} alt="heart" className="w-8 h-8" />
             </span>
             <span className="w-12 md:w-20 h-px bg-gold opacity-60" />
           </div>
