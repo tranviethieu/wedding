@@ -8,7 +8,7 @@ const HeroSection = () => {
       <div className="absolute inset-0">
         <img
           src={heroImg}
-          alt="Việt Hiếu & Thị Phương"
+          alt="Việt Hiếu & Đỗ Phương"
           className="w-full h-full object-cover"
           loading="eager"
           decoding="sync"
@@ -47,11 +47,13 @@ const HeroSection = () => {
           </h1>
           <div className="flex items-center justify-center gap-4 my-3">
             <span className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent via-cream/60 to-transparent" />
-            <span className="font-display text-2xl text-gold animate-heart-beat drop-shadow-lg">&</span>
+            <span className="font-display text-2xl text-gold animate-heart-beat drop-shadow-lg">
+              &
+            </span>
             <span className="w-10 md:w-16 h-px bg-gradient-to-r from-transparent via-cream/60 to-transparent" />
           </div>
           <h1 className="font-display text-5xl md:text-7xl text-cream drop-shadow-lg mb-6">
-            Thị Phương
+            Đỗ Phương
           </h1>
           <p className="text-cream/80 font-body text-lg md:text-xl tracking-widest drop-shadow-md">
             15 · 03 · 2026

@@ -25,8 +25,19 @@ import FooterSection from "@/components/wedding/FooterSection";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 
 const allImages = [
-  heroImg, w01, w02, w03, w04, w05, w06, w07, w09,
-  dividerGold, coupleIllustration, floralTop, floralBottom,
+  heroImg,
+  w01,
+  w02,
+  w03,
+  w04,
+  w05,
+  w06,
+  w07,
+  w09,
+  dividerGold,
+  coupleIllustration,
+  floralTop,
+  floralBottom,
 ];
 
 const Index = () => {
@@ -124,7 +135,11 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0">
-        <img src={heroImg} alt="Wedding" className="w-full h-full object-cover" />
+        <img
+          src={heroImg}
+          alt="Wedding"
+          className="w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
 
@@ -153,11 +168,13 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
           </h1>
           <div className="flex items-center justify-center gap-4 my-4">
             <span className="w-12 md:w-20 h-px bg-gold opacity-60" />
-            <span className="font-display text-2xl md:text-3xl text-gold animate-heart-beat">♥</span>
+            <span className="font-display text-2xl md:text-3xl text-gold animate-heart-beat">
+              ♥
+            </span>
             <span className="w-12 md:w-20 h-px bg-gold opacity-60" />
           </div>
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl text-cream mb-8 drop-shadow-lg">
-            Thị Phương
+            Đỗ Phương
           </h1>
         </motion.div>
 

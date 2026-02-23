@@ -22,7 +22,6 @@ const CoupleSection = () => {
 
         {/* Mobile: 1 hàng ngang | Desktop: 2 cột */}
         <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-16 items-start justify-center">
-          
           {/* Bride - LEFT */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -47,9 +46,10 @@ const CoupleSection = () => {
             </p>
 
             <p className="font-body text-base text-muted-foreground leading-relaxed max-w-sm mx-auto">
-              Con gái ông <strong>Đỗ Văn C</strong> và bà <strong>Lê Thị D</strong>
+              Con gái ông <strong>Đỗ Văn C</strong> và bà{" "}
+              <strong>Lê Thị D</strong>
               <br />
-              Quê quán: Hà Nội
+              Quê quán: Xã Nam Tiên Hưng
             </p>
           </motion.div>
 
@@ -80,7 +80,7 @@ const CoupleSection = () => {
               Con trai ông <strong>Trần Văn A</strong> và bà{" "}
               <strong>Nguyễn Thị B</strong>
               <br />
-              Quê quán: Hà Nội
+              Quê quán: Xã Nam Tiên Hưng
             </p>
           </motion.div>
         </div>

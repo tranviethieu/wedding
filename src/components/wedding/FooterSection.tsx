@@ -5,7 +5,7 @@ const FooterSection = () => {
     <footer className="relative py-16 bg-burgundy text-secondary-foreground text-center overflow-hidden">
       <div className="relative z-10 container max-w-2xl mx-auto px-6">
         <h2 className="font-display text-4xl md:text-5xl text-gold-light mb-4">
-          Việt Hiếu & Thị Phương
+          Việt Hiếu & Đỗ Phương
         </h2>
         <p className="font-body text-lg opacity-80 mb-6">
           Sự hiện diện của bạn là niềm vinh hạnh lớn lao của chúng tôi
@@ -18,7 +18,7 @@ const FooterSection = () => {
           <Heart className="w-5 h-5 text-gold-light fill-gold-light animate-heart-beat" />
         </div>
         <p className="font-body text-sm opacity-60">
-          Made with ♥ for Việt Hiếu & Thị Phương's Wedding
+          Made with ♥ for Việt Hiếu & Đỗ Phương's Wedding
         </p>
       </div>
     </footer>
