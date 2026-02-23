@@ -19,6 +19,8 @@ export default {
     },
     extend: {
       colors: {
+        "chat-bubble": "hsl(var(--chat-bubble))",
+        "chat-bubble-alt": "hsl(var(--chat-bubble-alt))",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

@@ -17,7 +17,7 @@ const wishes = [
 
 type Wish = (typeof wishes)[0] & { id: number };
 
-const MAX = 3;
+const MAX = 1;
 
 export default function FloatingWishes() {
   const [list, setList] = useState<Wish[]>([]);
@@ -29,7 +29,7 @@ export default function FloatingWishes() {
         const next = [...prev, { ...random, id: Date.now() }];
         return next.slice(-MAX);
       });
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, []);
@@ -41,19 +41,19 @@ export default function FloatingWishes() {
           <motion.div
             key={wish.id}
             layout
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{
               opacity: 0,
-              y: -30,
+              y: -20,
               filter: "blur(2px)",
             }}
             transition={{
               type: "spring",
               stiffness: 160,
               damping: 22,
-              opacity: { duration: 0.6, ease: "easeOut" },
-              filter: { duration: 0.6, ease: "easeOut" },
+              opacity: { duration: 2, ease: "easeOut" },
+              filter: { duration: 1, ease: "easeOut" },
             }}
             className="mb-2"
             style={{ transform: `translateY(${-index * 62}px)` }}
@@ -68,7 +68,7 @@ export default function FloatingWishes() {
 
 function WishItem({ wish }: { wish: Wish }) {
   return (
-    <div className="bg-red-400/80 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg">
+    <div className="bg-red-400/50 backdrop-blur-md px-4 py-2 rounded-xl shadow-lg">
       <p className="text-sm text-white font-semibold">
         {wish.name}: <span className="font-normal">{wish.text}</span>
       </p>

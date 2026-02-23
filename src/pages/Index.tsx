@@ -26,6 +26,7 @@ import FooterSection from "@/components/wedding/FooterSection";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 import SnowEffect from "@/components/wedding/SnowEffect";
 import FloatingWishes from "@/components/wedding/FloatingWishes";
+import ScrollingChat from "@/components/wedding/ScrollingChat";
 
 const allImages = [
   heroImg,
