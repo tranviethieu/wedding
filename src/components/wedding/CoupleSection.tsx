@@ -4,7 +4,7 @@ import brideImg from "@/assets/wedding-07.jpg";
 
 const CoupleSection = () => {
   return (
-    <section className="py-16 md:py-20 bg-background relative">
+    <section className="py-16 md:py-24 bg-background relative">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -12,17 +12,19 @@ const CoupleSection = () => {
         viewport={{ once: true }}
         className="container max-w-5xl mx-auto px-4 md:px-6 text-center"
       >
-        <p className="font-body text-sm md:text-lg text-muted-foreground tracking-widest uppercase mb-1">
+        <p className="font-body text-md text-muted-foreground tracking-widest uppercase mb-2">
           Cô Dâu & Chú Rể
         </p>
+
         <h2 className="font-heading text-2xl md:text-4xl text-foreground mb-2">
           Chúng Tôi
         </h2>
-        <div className="w-12 md:w-16 h-px bg-gold mx-auto mb-8 md:mb-12 opacity-50" />
+
+        <div className="w-14 md:w-20 h-px bg-gold mx-auto mb-10 md:mb-14 opacity-60" />
 
         {/* Mobile: 1 hàng ngang | Desktop: 2 cột */}
-        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-16 items-start justify-center">
-          {/* Bride - LEFT */}
+        <div className="flex md:grid md:grid-cols-2 gap-10 md:gap-20 items-start justify-center">
+          {/* Bride */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -30,7 +32,7 @@ const CoupleSection = () => {
             viewport={{ once: true }}
             className="flex-1 text-center"
           >
-            <div className="w-[10rem] h-[10rem] md:w-48 md:h-48 mx-auto mb-3 md:mb-6 rounded-full border-2 md:border-4 border-gold/30 overflow-hidden shadow-wedding">
+            <div className="w-[9.5rem] h-[9.5rem] md:w-48 md:h-48 mx-auto mb-4 md:mb-6 rounded-full border-[3px] border-gold/40 overflow-hidden shadow-wedding">
               <img
                 src={brideImg}
                 alt="Cô dâu"
@@ -38,22 +40,26 @@ const CoupleSection = () => {
               />
             </div>
 
-            <h3 className="font-display text-xl md:text-4xl text-burgundy mb-1">
+            <h3 className="font-display text-2xl md:text-4xl text-burgundy mb-1 leading-tight">
               Đỗ Thị Phương
             </h3>
-            <p className="font-body text-sm md:text-lg text-muted-foreground mb-1 md:mb-4">
+
+            <p className="font-body text-sm md:text-base tracking-widest uppercase text-muted-foreground mb-3">
               Cô Dâu
             </p>
 
-            <p className="font-body text-base text-muted-foreground leading-relaxed max-w-sm mx-auto">
-              Con gái ông <strong>Đỗ Văn C</strong> và bà{" "}
-              <strong>Lê Thị D</strong>
+            <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs mx-auto">
+              Con gái ông{" "}
+              <strong className="text-foreground">Đỗ Văn Thơi</strong> và bà{" "}
+              <strong className="text-foreground">Nguyễn Thị Quyên</strong>
               <br />
-              Quê quán: Xã Nam Tiên Hưng
+              <span className="italic opacity-80">
+                Thôn Tân Tiến, Xã Nam Tiên Hưng, Tỉnh Hưng Yên
+              </span>
             </p>
           </motion.div>
 
-          {/* Groom - RIGHT */}
+          {/* Groom */}
           <motion.div
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -61,7 +67,7 @@ const CoupleSection = () => {
             viewport={{ once: true }}
             className="flex-1 text-center"
           >
-            <div className="w-[10rem] h-[10rem] md:w-48 md:h-48 mx-auto mb-3 md:mb-6 rounded-full border-2 md:border-4 border-gold/30 overflow-hidden shadow-wedding">
+            <div className="w-[9.5rem] h-[9.5rem] md:w-48 md:h-48 mx-auto mb-4 md:mb-6 rounded-full border-[3px] border-gold/40 overflow-hidden shadow-wedding">
               <img
                 src={groomImg}
                 alt="Chú rể"
@@ -69,18 +75,22 @@ const CoupleSection = () => {
               />
             </div>
 
-            <h3 className="font-display text-xl md:text-4xl text-gold mb-1">
+            <h3 className="font-display text-2xl md:text-4xl text-gold mb-1 leading-tight">
               Trần Việt Hiếu
             </h3>
-            <p className="font-body text-sm md:text-lg text-muted-foreground mb-1 md:mb-4">
+
+            <p className="font-body text-sm md:text-base tracking-widest uppercase text-muted-foreground mb-3">
               Chú Rể
             </p>
 
-            <p className=" font-body text-base text-muted-foreground leading-relaxed max-w-sm mx-auto">
-              Con trai ông <strong>Trần Văn A</strong> và bà{" "}
-              <strong>Nguyễn Thị B</strong>
+            <p className="font-body text-sm md:text-base text-muted-foreground leading-relaxed max-w-xs mx-auto">
+              Con trai ông{" "}
+              <strong className="text-foreground">Trần Cao Bình</strong> và bà{" "}
+              <strong className="text-foreground">Nguyễn Thị Thái</strong>
               <br />
-              Quê quán: Xã Nam Tiên Hưng
+              <span className="italic opacity-80">
+                Thôn Vạn Thắng, Xã Nam Tiên Hưng, Tỉnh Hưng Yên
+              </span>
             </p>
           </motion.div>
         </div>

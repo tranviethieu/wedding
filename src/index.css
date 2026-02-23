@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Great+Vibes&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -47,9 +47,9 @@
     --rose: 350 60% 65%;
     --rose-light: 350 50% 80%;
 
-    --font-display: 'Great Vibes', cursive;
-    --font-heading: 'Playfair Display', serif;
-    --font-body: 'Cormorant Garamond', serif;
+    --font-display: "Great Vibes", cursive;
+    --font-heading: "Playfair Display", serif;
+    --font-body: "Cormorant Garamond", serif;
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -72,7 +72,12 @@
     font-family: var(--font-body);
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
   }
 }
@@ -118,9 +123,29 @@
     background-color: hsl(var(--rose-light));
   }
   .gradient-gold {
-    background: linear-gradient(135deg, hsl(var(--gold-dark)), hsl(var(--gold)), hsl(var(--gold-light)));
+    background: linear-gradient(
+      135deg,
+      hsl(var(--gold-dark)),
+      hsl(var(--gold)),
+      hsl(var(--gold-light))
+    );
   }
   .shadow-wedding {
     box-shadow: 0 10px 40px -10px hsl(var(--gold) / 0.3);
   }
+}
+@keyframes snow {
+  0% {
+    transform: translateY(-10px) translateX(0);
+  }
+  100% {
+    transform: translateY(110vh) translateX(30px);
+  }
+}
+
+.animate-snow {
+  animation-name: snow;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  will-change: transform;
 }

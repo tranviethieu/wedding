@@ -56,8 +56,11 @@ const HeroSection = () => {
           <h1 className="font-display text-5xl md:text-7xl text-cream drop-shadow-lg mb-6">
             Đỗ Phương
           </h1>
-          <p className="text-cream/80 font-body text-lg md:text-xl tracking-widest drop-shadow-md">
+          <p className="text-cream/80 font-number text-lg md:text-xl tracking-widest drop-shadow-md">
             15 · 03 · 2026
+          </p>
+          <p className="font-body text-sm md:text-3xl text-cream/80 italic text-center leading-relaxed">
+            Tình yêu viết nên câu chuyện của chúng tôi.
           </p>
         </motion.div>
       </div>

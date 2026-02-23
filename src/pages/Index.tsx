@@ -24,6 +24,8 @@ import GallerySection from "@/components/wedding/GallerySection";
 import WishesSection from "@/components/wedding/WishesSection";
 import FooterSection from "@/components/wedding/FooterSection";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
+import SnowEffect from "@/components/wedding/SnowEffect";
+import FloatingWishes from "@/components/wedding/FloatingWishes";
 
 const allImages = [
   heroImg,
@@ -116,6 +118,8 @@ const Index = () => {
           <OpeningScreen onOpen={handleOpen} />
         ) : (
           <div className="relative" ref={scrollRef}>
+            <FloatingWishes />
+            <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
             <CountdownSection />
@@ -135,6 +139,18 @@ const Index = () => {
 const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
     <div className="h-screen flex flex-col items-center justify-end md:justify-center pb-8 md:pb-0 relative overflow-hidden">
+      <motion.div
+        initial={{ opacity: 0, y: -10 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1.2, delay: 0.4 }}
+        className="absolute top-6 md:top-10 left-1/2 -translate-x-1/2 z-10 px-4 text-center max-w-xl"
+      >
+        <p className="font-body text-[11px] md:text-sm text-cream/70 italic leading-relaxed tracking-wide">
+          I love three things in this world: the sun, the moon, and you.
+          <br className="hidden md:block" />
+          The sun for the day, the moon for the night, and you forever.
+        </p>
+      </motion.div>
       <div className="absolute inset-0">
         <img
           src={heroImg}
@@ -183,13 +199,13 @@ const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.3 }}
-          className="text-cream/70 font-body text-lg md:text-xl mb-5 italic"
+          className="text-cream/70 font-number text-lg md:text-xl mb-5 italic"
         >
-          15 . 03 . 2026
+          Chủ nhật ngày 15 tháng 03 năm 2026
         </motion.p>
 
         <motion.button
-          initial={{ opacity: 0, y: 10 }}
+          //initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.6 }}
           whileHover={{ scale: 1.05 }}

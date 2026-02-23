@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -76,9 +81,10 @@ export default {
         },
       },
       fontFamily: {
-        display: ['Great Vibes', 'cursive'],
-        heading: ['Playfair Display', 'serif'],
-        body: ['Cormorant Garamond', 'serif'],
+        display: ["Great Vibes", "cursive"],
+        heading: ["Playfair Display", "serif"],
+        body: ["Cormorant Garamond", "serif"],
+        number: ["DM Serif Display", "serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -102,7 +108,7 @@ export default {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
         },
-        "float": {
+        float: {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
         },
@@ -116,7 +122,7 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-in-up": "fade-in-up 0.8s ease-out forwards",
         "fade-in": "fade-in 1s ease-out forwards",
-        "float": "float 3s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
         "heart-beat": "heart-beat 1.5s ease-in-out infinite",
       },
     },

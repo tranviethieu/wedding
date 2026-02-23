@@ -38,7 +38,7 @@ const MusicPlayer = ({ autoPlay = false }: MusicPlayerProps) => {
       <audio ref={audioRef} src="/nhac.mp3" loop preload="auto" />
       <button
         onClick={toggleMusic}
-        className="fixed bottom-6 right-6 z-50 w-14 h-14 rounded-full bg-gold/90 backdrop-blur-sm shadow-wedding flex items-center justify-center hover:bg-gold transition-colors"
+        className="fixed top-6 right-6 z-50 w-14 h-14 rounded-full bg-gold/90 backdrop-blur-sm shadow-wedding flex items-center justify-center hover:bg-gold transition-colors"
         aria-label={isPlaying ? "Tắt nhạc" : "Bật nhạc"}
       >
         <div
