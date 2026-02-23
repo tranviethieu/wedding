@@ -11,8 +11,16 @@ interface Wish {
 
 const WishesSection = () => {
   const [wishes, setWishes] = useState<Wish[]>([
-    { name: "Nguyễn Văn An", message: "Chúc hai bạn trăm năm hạnh phúc, sớm có em bé! 🎉", timestamp: new Date() },
-    { name: "Lê Thị Mai", message: "Chúc mừng hạnh phúc! Mong hai bạn luôn yêu thương nhau ❤️", timestamp: new Date() },
+    {
+      name: "Nguyễn Văn An",
+      message: "Chúc hai bạn trăm năm hạnh phúc, sớm có em bé! 🎉",
+      timestamp: new Date(),
+    },
+    {
+      name: "Lê Thị Mai",
+      message: "Chúc mừng hạnh phúc! Mong hai bạn luôn yêu thương nhau ❤️",
+      timestamp: new Date(),
+    },
   ]);
   const [name, setName] = useState("");
   const [message, setMessage] = useState("");
@@ -34,14 +42,14 @@ const WishesSection = () => {
         viewport={{ once: true }}
         className="container max-w-3xl mx-auto px-6 text-center"
       >
-        <p className="font-body text-lg text-muted-foreground tracking-widest uppercase mb-2">
+        <p className="font-body text-md text-muted-foreground tracking-widest uppercase mb-2">
           Sổ Lưu Bút
         </p>
-        <h2 className="font-heading text-3xl md:text-4xl text-foreground mb-2">
+
+        <h2 className="font-heading text-2xl md:text-4xl text-foreground mb-2">
           Gửi Lời Chúc
         </h2>
-        <img src={dividerGold} alt="" className="w-40 mx-auto mb-12 opacity-60" />
-
+        <div className="w-14 md:w-20 h-px bg-gold mx-auto mb-10 md:mb-14 opacity-60" />
         <form onSubmit={handleSubmit} className="mb-12 space-y-4">
           <input
             type="text"
@@ -79,7 +87,9 @@ const WishesSection = () => {
             >
               <div className="flex items-center gap-2 mb-2">
                 <Heart className="w-4 h-4 text-burgundy fill-burgundy" />
-                <span className="font-heading font-semibold text-foreground">{wish.name}</span>
+                <span className="font-heading font-semibold text-foreground">
+                  {wish.name}
+                </span>
               </div>
               <p className="font-body text-muted-foreground">{wish.message}</p>
             </motion.div>
