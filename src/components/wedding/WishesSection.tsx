@@ -20,7 +20,7 @@ const attendingLabels: Record<string, string> = {
 };
 const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [name, setName] = useState("");
-  useFixIOSKeyboard();
+  //useFixIOSKeyboard();
   const [message, setMessage] = useState("");
   const [attending, setAttending] = useState<"yes" | "no" | "maybe">("yes");
   const [guests, setGuests] = useState(1);
@@ -113,7 +113,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
           />
 
           {/* Suggested wishes - horizontal scroll on mobile */}
-          <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:justify-center scrollbar-hide">
+          {/* <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:justify-center scrollbar-hide">
             {suggestedWishes.map((s, i) => (
               <button
                 key={i}
@@ -128,7 +128,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                 {s}
               </button>
             ))}
-          </div>
+          </div> */}
 
           {/* RSVP Section */}
           <div className="bg-cream-dark rounded-lg p-4 md:p-5 border border-gold/10 text-left space-y-3 md:space-y-4">
