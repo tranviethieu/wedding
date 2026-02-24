@@ -4,6 +4,7 @@ import { Heart, Send, UserCheck } from "lucide-react";
 import { Wish } from "@/pages/Index";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import { useFixIOSKeyboard } from "@/hooks/useFixIOSKeyboard";
 const suggestedWishes = [
   "Chúc hai bạn trăm năm hạnh phúc! 🎉",
   "Chúc mừng hạnh phúc, sớm có tin vui nhé! ❤️",
@@ -19,6 +20,7 @@ const attendingLabels: Record<string, string> = {
 };
 const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [name, setName] = useState("");
+  useFixIOSKeyboard();
   const [message, setMessage] = useState("");
   const [attending, setAttending] = useState<"yes" | "no" | "maybe">("yes");
   const [guests, setGuests] = useState(1);
