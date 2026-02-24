@@ -28,6 +28,25 @@ import SnowEffect from "@/components/wedding/SnowEffect";
 import FloatingWishes from "@/components/wedding/FloatingWishes";
 import ScrollingChat from "@/components/wedding/ScrollingChat";
 
+import {
+  collection,
+  addDoc,
+  onSnapshot,
+  query,
+  orderBy,
+  serverTimestamp,
+  Timestamp,
+} from "firebase/firestore";
+import { db } from "@/lib/firebase";
+export interface Wish {
+  id: string;
+  name: string;
+  message: string;
+  role: 1 | 2;
+  attending: "yes" | "no" | "maybe";
+  guests: number;
+  createdAt: Timestamp | null;
+}
 const allImages = [
   heroImg,
   w01,
@@ -49,6 +68,16 @@ const Index = () => {
   const [musicReady, setMusicReady] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
   const imagesLoaded = useImagePreloader(allImages);
+  const [wishes, setWishes] = useState<Wish[]>([]);
+  useEffect(() => {
+    const q = query(collection(db, "wishes"), orderBy("createdAt", "desc"));
+    const unsub = onSnapshot(q, (snap) => {
+      setWishes(
+        snap.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Wish))
+      );
+    });
+    return unsub;
+  }, []);
 
   const handleOpen = () => {
     setShowInvite(true);
@@ -119,7 +148,7 @@ const Index = () => {
           <OpeningScreen onOpen={handleOpen} />
         ) : (
           <div className="relative" ref={scrollRef}>
-            <FloatingWishes />
+            <FloatingWishes wishes={wishes} />
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
@@ -128,7 +157,7 @@ const Index = () => {
             <EventSection />
             <TimelineSection />
             <GallerySection />
-            <WishesSection />
+            <WishesSection wishes={wishes} />
             <FooterSection />
           </div>
         )}
