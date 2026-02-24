@@ -148,7 +148,7 @@ const Index = () => {
           <OpeningScreen onOpen={handleOpen} />
         ) : (
           <div className="relative" ref={scrollRef}>
-            {/* <FloatingWishes wishes={wishes} /> */}
+            <FloatingWishes wishes={wishes} />
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
