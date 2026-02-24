@@ -23,7 +23,7 @@ const CoupleSection = () => {
         <div className="w-14 md:w-20 h-px bg-gold mx-auto mb-10 md:mb-14 opacity-60" />
 
         {/* Mobile: 1 hàng ngang | Desktop: 2 cột */}
-        <div className="flex md:grid md:grid-cols-2 gap-10 md:gap-20 items-start justify-center">
+        <div className="flex md:grid md:grid-cols-2 gap-6 md:gap-20 items-start justify-center">
           {/* Bride */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}

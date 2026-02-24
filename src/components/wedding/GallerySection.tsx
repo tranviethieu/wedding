@@ -2,16 +2,17 @@ import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import w01 from "@/assets/wedding-01.jpg";
-import w02 from "@/assets/wedding-02.jpg";
+import w02 from "@/assets/DSC_0541.jpg";
 import w03 from "@/assets/wedding-03.jpg";
-import w04 from "@/assets/wedding-04.jpg";
-import w05 from "@/assets/wedding-05.jpg";
-import w06 from "@/assets/wedding-06.jpg";
-import w07 from "@/assets/wedding-07.jpg";
-import w08 from "@/assets/wedding-08.jpg";
-import w09 from "@/assets/wedding-09.jpg";
-
-const galleryImages = [w01, w02, w03, w04, w05, w09, w06, w07, w08];
+import w04 from "@/assets/wedding-05.jpg";
+import w05 from "@/assets/DSC_0078.jpg";
+import w06 from "@/assets/DSC_0315.jpg";
+import w07 from "@/assets/DSC_9853.jpg";
+import w08 from "@/assets/DSC_9986.jpg";
+import w09 from "@/assets/DSC_0298.jpg";
+import w100 from "@/assets/DSC_0795.png";
+import w101 from "@/assets/DSC_0655.jpg";
+const galleryImages = [w01, w02, w03, w04, w05, w09, w06, w07, w08, w100, w101];
 
 const GallerySection = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
@@ -20,12 +21,16 @@ const GallerySection = () => {
   const closeLightbox = () => setSelectedIndex(null);
 
   const goNext = useCallback(() => {
-    setSelectedIndex((prev) => (prev !== null ? (prev + 1) % galleryImages.length : null));
+    setSelectedIndex((prev) =>
+      prev !== null ? (prev + 1) % galleryImages.length : null
+    );
   }, []);
 
   const goPrev = useCallback(() => {
     setSelectedIndex((prev) =>
-      prev !== null ? (prev - 1 + galleryImages.length) % galleryImages.length : null
+      prev !== null
+        ? (prev - 1 + galleryImages.length) % galleryImages.length
+        : null
     );
   }, []);
 
@@ -129,7 +134,10 @@ const GallerySection = () => {
 
             {/* Prev button */}
             <button
-              onClick={(e) => { e.stopPropagation(); goPrev(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                goPrev();
+              }}
               className="absolute left-2 md:left-4 z-10 text-cream/60 hover:text-cream p-2 transition-colors"
             >
               <ChevronLeft size={36} />
@@ -152,7 +160,10 @@ const GallerySection = () => {
 
             {/* Next button */}
             <button
-              onClick={(e) => { e.stopPropagation(); goNext(); }}
+              onClick={(e) => {
+                e.stopPropagation();
+                goNext();
+              }}
               className="absolute right-2 md:right-4 z-10 text-cream/60 hover:text-cream p-2 transition-colors"
             >
               <ChevronRight size={36} />

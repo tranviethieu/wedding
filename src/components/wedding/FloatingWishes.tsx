@@ -21,7 +21,7 @@ export default function FloatingWishes({ wishes }: Props) {
         const next = [...prev, { ...random, __key: Date.now() }];
         return next.slice(-MAX);
       });
-    }, 5000);
+    }, 2000);
 
     return () => clearInterval(interval);
   }, [wishes]);

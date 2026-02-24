@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Heart, Send, UserCheck } from "lucide-react";
-import dividerGold from "@/assets/divider-gold.png";
 import { Wish } from "@/pages/Index";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
@@ -160,7 +159,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                 <select
                   value={guests}
                   onChange={(e) => setGuests(Number(e.target.value))}
-                  className="px-3 py-1.5 rounded-lg border border-gold/30 bg-background font-body text-foreground text-sm focus:outline-none focus:border-gold"
+                  className="px-3 py-1.5 rounded-lg border border-gold/30 bg-background font-number text-foreground text-sm focus:outline-none focus:border-gold"
                 >
                   {[1, 2, 3, 4, 5].map((n) => (
                     <option key={n} value={n}>

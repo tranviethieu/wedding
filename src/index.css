@@ -136,18 +136,27 @@
     box-shadow: 0 10px 40px -10px hsl(var(--gold) / 0.3);
   }
 }
-@keyframes snow {
+@keyframes snowfall {
   0% {
     transform: translateY(-10px) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
   }
   100% {
-    transform: translateY(110vh) translateX(30px);
+    transform: translateY(100vh) translateX(20px);
+    opacity: 0;
   }
 }
 
-.animate-snow {
-  animation-name: snow;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  will-change: transform;
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
 }

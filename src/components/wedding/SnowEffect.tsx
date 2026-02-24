@@ -1,23 +1,48 @@
-const SnowEffect = () => {
+import { useEffect, useState } from "react";
+
+interface Snowflake {
+  id: number;
+  x: number;
+  size: number;
+  delay: number;
+  duration: number;
+  opacity: number;
+}
+
+const SnowfallEffect = () => {
+  const [flakes, setFlakes] = useState<Snowflake[]>([]);
+
+  useEffect(() => {
+    const count = window.innerWidth < 768 ? 30 : 50;
+    setFlakes(
+      Array.from({ length: count }, (_, i) => ({
+        id: i,
+        x: Math.random() * 100,
+        size: Math.random() * 4 + 2,
+        delay: Math.random() * 10,
+        duration: Math.random() * 5 + 8,
+        opacity: Math.random() * 0.5 + 0.3,
+      }))
+    );
+  }, []);
+
   return (
-    <div className="pointer-events-none fixed inset-0 z-[9999] overflow-hidden">
-      {Array.from({ length: 24 }).map((_, i) => (
-        <span
-          key={i}
-          className="absolute top-[-10px] text-white animate-snow"
+    <div className="fixed inset-0 z-40 pointer-events-none overflow-hidden">
+      {flakes.map((f) => (
+        <div
+          key={f.id}
+          className="absolute rounded-full bg-cream"
           style={{
-            left: `${Math.random() * 100}%`,
-            fontSize: `${Math.random() * 8 + 6}px`,
-            animationDuration: `${Math.random() * 6 + 6}s`,
-            animationDelay: `${Math.random() * 10}s`,
-            opacity: Math.random() * 0.6 + 0.4,
+            left: `${f.x}%`,
+            width: f.size,
+            height: f.size,
+            opacity: f.opacity,
+            animation: `snowfall ${f.duration}s linear ${f.delay}s infinite`,
           }}
-        >
-          <span>❄</span>
-        </span>
+        />
       ))}
     </div>
   );
 };
 
-export default SnowEffect;
+export default SnowfallEffect;
