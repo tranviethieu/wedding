@@ -91,6 +91,8 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
         >
           <input
             type="text"
+            autoComplete="name"
+            inputMode="text"
             placeholder="Tên của bạn"
             value={name}
             onChange={(e) => setName(e.target.value)}
@@ -98,6 +100,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
           />
           <textarea
             placeholder="Lời chúc của bạn..."
+            inputMode="text"
             value={message}
             onChange={(e) => {
               setMessage(e.target.value);
