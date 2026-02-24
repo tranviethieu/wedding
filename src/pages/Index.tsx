@@ -168,7 +168,7 @@ const Index = () => {
 
 const OpeningScreen = ({ onOpen }: { onOpen: () => void }) => {
   return (
-    <div className="h-screen flex flex-col items-center justify-end md:justify-center pb-8 md:pb-0 relative overflow-hidden">
+    <div className="h-[100dvh] flex flex-col items-center justify-end md:justify-center pb-8 md:pb-0 relative overflow-hidden">
       <motion.div
         initial={{ opacity: 0, y: -10 }}
         animate={{ opacity: 1, y: 0 }}
