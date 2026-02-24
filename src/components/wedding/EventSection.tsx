@@ -7,12 +7,11 @@ import {
   HeartHandshake,
   Church,
 } from "lucide-react";
-import dividerGold from "@/assets/divider-gold.png";
 
 const events = [
   {
     title: "Tiệc Chiêu Đãi",
-    date: "Chủ nhật, 15. 03. 2025",
+    date: "Chủ nhật, 15. 03. 2026",
     time: "7:00 - 10:00",
     location: "Tư gia nhà gái (google map)",
     address:
@@ -23,7 +22,7 @@ const events = [
   },
   {
     title: "Lễ Vu Quy",
-    date: "Chủ nhật, 15. 03. 2025",
+    date: "Chủ nhật, 15. 03. 2026",
     time: "10:30 - 11:30",
     location: "Tư gia nhà gái (google map)",
     address:
@@ -35,7 +34,7 @@ const events = [
   },
   {
     title: "Lễ Thành Hôn",
-    date: "Chủ nhật, 15. 03. 2025",
+    date: "Chủ nhật, 15. 03. 2026",
     time: "11:30 - 13:00",
     location: "Tư gia nhà trai (google map)",
     address:
