@@ -26,7 +26,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [guests, setGuests] = useState(1);
   const [sending, setSending] = useState(false);
   const [selectedSuggestion, setSelectedSuggestion] = useState<number | null>(
-    null
+    null,
   );
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -98,7 +98,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
             placeholder="Tên của bạn"
             value={name}
             onChange={(e) => setName(e.target.value)}
-            className="w-full px-4 md:px-5 py-2.5 md:py-3 rounded-lg border border-gold/30 bg-background font-body text-sm md:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
+            className="w-full px-4 md:px-5 py-2.5 md:py-3 rounded-lg border border-gold/30 bg-background font-body text-base md:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30"
           />
           <textarea
             placeholder="Lời chúc của bạn..."
@@ -109,11 +109,11 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
               setSelectedSuggestion(null);
             }}
             rows={3}
-            className="w-full px-4 md:px-5 py-2.5 md:py-3 rounded-lg border border-gold/30 bg-background font-body text-sm md:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 resize-none"
+            className="w-full px-4 md:px-5 py-2.5 md:py-3 rounded-lg border border-gold/30 bg-background font-body text-base md:text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold/30 resize-none"
           />
 
           {/* Suggested wishes - horizontal scroll on mobile */}
-          {/* <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:justify-center scrollbar-hide">
+          <div className="flex gap-2 overflow-x-auto pb-2 -mx-4 px-4 md:mx-0 md:px-0 md:flex-wrap md:justify-center scrollbar-hide">
             {suggestedWishes.map((s, i) => (
               <button
                 key={i}
@@ -128,7 +128,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                 {s}
               </button>
             ))}
-          </div> */}
+          </div>
 
           {/* RSVP Section */}
           <div className="bg-cream-dark rounded-lg p-4 md:p-5 border border-gold/10 text-left space-y-3 md:space-y-4">
@@ -204,7 +204,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                     {wish.name}
                   </span>
                 </div>
-                <span
+                {/* <span
                   className={`text-xs font-body px-2.5 py-0.5 rounded-full ${
                     wish.attending === "yes"
                       ? "bg-green-100 text-green-700"
@@ -217,7 +217,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                   {wish.attending === "yes" && wish.guests > 1
                     ? ` (${wish.guests} khách)`
                     : ""}
-                </span>
+                </span> */}
               </div>
               <p className="font-body text-muted-foreground">{wish.message}</p>
             </motion.div>

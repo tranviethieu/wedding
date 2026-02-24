@@ -34,6 +34,8 @@ import {
   Timestamp,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
+import GiftBox from "@/components/GiftBox";
+import ScrollToTop from "@/components/ScrollToTop";
 export interface Wish {
   id: string;
   name: string;
@@ -69,7 +71,7 @@ const Index = () => {
     const q = query(collection(db, "wishes"), orderBy("createdAt", "desc"));
     const unsub = onSnapshot(q, (snap) => {
       setWishes(
-        snap.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Wish))
+        snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }) as Wish),
       );
     });
     return unsub;
@@ -145,6 +147,7 @@ const Index = () => {
         ) : (
           <div className="relative" ref={scrollRef}>
             {/* <FloatingWishes wishes={wishes} /> */}
+            <GiftBox />
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
@@ -155,6 +158,7 @@ const Index = () => {
             <GallerySection />
             <WishesSection wishes={wishes} />
             <FooterSection />
+            <ScrollToTop />
           </div>
         )}
       </motion.div>
