@@ -204,7 +204,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                     {wish.name}
                   </span>
                 </div>
-                {/* <span
+                <span
                   className={`text-xs font-body px-2.5 py-0.5 rounded-full ${
                     wish.attending === "yes"
                       ? "bg-green-100 text-green-700"
@@ -217,7 +217,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
                   {wish.attending === "yes" && wish.guests > 1
                     ? ` (${wish.guests} khách)`
                     : ""}
-                </span> */}
+                </span>
               </div>
               <p className="font-body text-muted-foreground">{wish.message}</p>
             </motion.div>

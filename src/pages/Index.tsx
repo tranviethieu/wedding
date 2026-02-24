@@ -25,16 +25,12 @@ import WishesSection from "@/components/wedding/WishesSection";
 import FooterSection from "@/components/wedding/FooterSection";
 import MusicPlayer from "@/components/wedding/MusicPlayer";
 import SnowEffect from "@/components/wedding/SnowEffect";
-import FloatingWishes from "@/components/wedding/FloatingWishes";
-import ScrollingChat from "@/components/wedding/ScrollingChat";
 
 import {
   collection,
-  addDoc,
   onSnapshot,
   query,
   orderBy,
-  serverTimestamp,
   Timestamp,
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
@@ -148,7 +144,7 @@ const Index = () => {
           <OpeningScreen onOpen={handleOpen} />
         ) : (
           <div className="relative" ref={scrollRef}>
-            <FloatingWishes wishes={wishes} />
+            {/* <FloatingWishes wishes={wishes} /> */}
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
