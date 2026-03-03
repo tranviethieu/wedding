@@ -14,7 +14,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
-import { propIndex } from "@/pages/Index";
+import { useLocation } from "react-router-dom";
 
 const BANK_INFO = {
   bankName: "Techcombank",
@@ -27,9 +27,11 @@ const BANK_INFO_Hieu = {
   accountHolder: "Tran Viet Hieu",
 };
 
-const GiftBox: React.FC<propIndex> = ({ checkPage = false }) => {
+const GiftBox = () => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
+  const location = useLocation();
+  const checkPage = location.search.includes("nhatrai");
   const bank = checkPage ? BANK_INFO_Hieu : BANK_INFO;
   const handleCopy = async () => {
     await navigator.clipboard.writeText(bank.accountNumber);

@@ -5,6 +5,7 @@ import { Wish } from "@/pages/Index";
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "@/lib/firebase";
 import { useFixIOSKeyboard } from "@/hooks/useFixIOSKeyboard";
+import { useLocation } from "react-router-dom";
 const suggestedWishes = [
   "Chúc hai bạn trăm năm hạnh phúc! 🎉",
   "Chúc mừng hạnh phúc, sớm có tin vui nhé! ❤️",
@@ -18,11 +19,10 @@ const attendingLabels: Record<string, string> = {
   no: "Không tham dự",
   maybe: "Chưa chắc chắn",
 };
-const WishesSection: React.FC<{ wishes: Wish[]; checkPage: boolean }> = ({
-  wishes,
-  checkPage,
-}) => {
+const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [name, setName] = useState("");
+  const location = useLocation();
+  const checkPage = location.search.includes("nhatrai");
   //useFixIOSKeyboard();
   const [message, setMessage] = useState("");
   const [attending, setAttending] = useState<"yes" | "no" | "maybe">("yes");

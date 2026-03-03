@@ -1,4 +1,3 @@
-import { propIndex } from "@/pages/Index";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -8,6 +7,7 @@ import {
   HeartHandshake,
   Church,
 } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 const eventsGai = [
   {
@@ -86,7 +86,9 @@ const eventsTrai = [
     mapImg: "/images/nhatrai.png",
   },
 ];
-const EventSection: React.FC<propIndex> = ({ checkPage = false }) => {
+const EventSection = () => {
+  const location = useLocation();
+  const checkPage = location.search.includes("nhatrai");
   const events = checkPage ? eventsTrai : eventsGai;
   return (
     <section className="py-16 md:py-20 bg-cream-dark relative">
@@ -106,7 +108,7 @@ const EventSection: React.FC<propIndex> = ({ checkPage = false }) => {
         </h2>
         <div className="w-14 md:w-20 h-px bg-gold mx-auto mb-10 md:mb-14 opacity-60" />
 
-        <div className="grid gap-6 md:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2">
           {events.map((event, i) => {
             const Icon = event.icon;
 

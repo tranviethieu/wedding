@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import dividerGold from "@/assets/divider-gold.png";
@@ -60,10 +60,8 @@ const allImages = [
   floralTop,
   floralBottom,
 ];
-export interface propIndex {
-  checkPage: boolean;
-}
-const Index: React.FC<propIndex> = ({ checkPage = false }) => {
+
+const Index = () => {
   const [showInvite, setShowInvite] = useState(false);
   const [musicReady, setMusicReady] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -149,16 +147,16 @@ const Index: React.FC<propIndex> = ({ checkPage = false }) => {
         ) : (
           <div className="relative" ref={scrollRef}>
             {/* <FloatingWishes wishes={wishes} /> */}
-            <GiftBox checkPage={checkPage} />
+            <GiftBox />
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
             <CountdownSection />
             <CoupleSection />
-            <EventSection checkPage={checkPage} />
+            <EventSection />
             <TimelineSection />
             <GallerySection />
-            <WishesSection wishes={wishes} checkPage={checkPage} />
+            <WishesSection wishes={wishes} />
             <FooterSection />
             <ScrollToTop />
           </div>
