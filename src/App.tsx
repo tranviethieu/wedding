@@ -18,7 +18,7 @@ const App = () => (
           <Route path="/" element={<Index checkPage={false} />} />
           <Route path="/groom-family" element={<Index checkPage={true} />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<Index checkPage={false} />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
