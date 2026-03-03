@@ -31,7 +31,8 @@ const GiftBox = () => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
   const location = useLocation();
-  const checkPage = location.search.includes("nhatrai");
+  const checkPage =
+    location.search.includes("nhatrai") || location.search.includes("you");
   const bank = checkPage ? BANK_INFO_Hieu : BANK_INFO;
   const handleCopy = async () => {
     await navigator.clipboard.writeText(bank.accountNumber);

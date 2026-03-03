@@ -88,7 +88,8 @@ const eventsTrai = [
 ];
 const EventSection = () => {
   const location = useLocation();
-  const checkPage = location.search.includes("nhatrai");
+  const checkPage =
+    location.search.includes("nhatrai") || location.search.includes("you");
   const events = checkPage ? eventsTrai : eventsGai;
   return (
     <section className="py-16 md:py-20 bg-cream-dark relative">

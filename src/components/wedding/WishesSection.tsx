@@ -22,7 +22,8 @@ const attendingLabels: Record<string, string> = {
 const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [name, setName] = useState("");
   const location = useLocation();
-  const checkPage = location.search.includes("nhatrai");
+  const checkPage =
+    location.search.includes("nhatrai") || location.search.includes("you");
   //useFixIOSKeyboard();
   const [message, setMessage] = useState("");
   const [attending, setAttending] = useState<"yes" | "no" | "maybe">("yes");
