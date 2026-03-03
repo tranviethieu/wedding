@@ -22,7 +22,7 @@ const BANK_INFO = {
   accountHolder: "DO THI PHUONG",
 };
 const BANK_INFO_Hieu = {
-  bankName: "Viettinbank",
+  bankName: "VietinBank",
   accountNumber: "0385763666",
   accountHolder: "Tran Viet Hieu",
 };
