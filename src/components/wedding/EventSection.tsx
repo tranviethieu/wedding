@@ -1,3 +1,4 @@
+import { propIndex } from "@/pages/Index";
 import { motion } from "framer-motion";
 import {
   MapPin,
@@ -8,7 +9,7 @@ import {
   Church,
 } from "lucide-react";
 
-const events = [
+const eventsGai = [
   {
     title: "Tiệc Chiêu Đãi",
     date: "Chủ nhật, 15. 03. 2026",
@@ -46,8 +47,47 @@ const events = [
     mapImg: "/images/nhatrai.png",
   },
 ];
+const eventsTrai = [
+  {
+    title: "Tiệc Chiêu Đãi",
+    date: "Chủ nhật, 15. 03. 2026",
+    time: "7:00 - 10:00",
+    location: "Tư gia nhà trai (google map)",
+    address:
+      "Thôn Vạn Thắng, Xã Hoa Nam, Huyện Đông Hưng, Tỉnh Thái Bình (Địa chỉ cũ)",
+    mapUrl:
+      "https://www.google.com/maps/place/Nh%C3%A0+Hi%E1%BA%BFu+Ph%C6%B0%C6%A1ng/@20.5229557,106.2772166,17z/data=!3m1!4b1!4m6!3m5!1s0x3135ef002f44d549:0x71239ffce8d80f9f!8m2!3d20.5229507!4d106.2820821!16s%2Fg%2F11yry9lv6x!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+    icon: PartyPopper,
+    mapImg: "/images/nhatrai.png",
+  },
+  {
+    title: "Lễ Vu Quy",
+    date: "Chủ nhật, 15. 03. 2026",
+    time: "10:30 - 11:30",
+    location: "Tư gia nhà gái (google map)",
+    address:
+      "Thôn Tân Tiến, Xã Hồng Giang, Huyện Đông Hưng, Tỉnh Thái Bình (Địa chỉ cũ)",
+    mapUrl: "https://maps.app.goo.gl/msK94e796UHAMEDY6?g_st=ic",
 
-const EventSection = () => {
+    icon: HeartHandshake,
+    mapImg: "/images/ggmap.png",
+  },
+  {
+    title: "Lễ Thành Hôn",
+    date: "Chủ nhật, 15. 03. 2026",
+    time: "11:30 - 13:00",
+    location: "Tư gia nhà trai (google map)",
+    address:
+      "Thôn Vạn Thắng, Xã Hoa Nam, Huyện Đông Hưng, Tỉnh Thái Bình (Địa chỉ cũ)",
+
+    mapUrl:
+      "https://www.google.com/maps/place/Nh%C3%A0+Hi%E1%BA%BFu+Ph%C6%B0%C6%A1ng/@20.5229557,106.2772166,17z/data=!3m1!4b1!4m6!3m5!1s0x3135ef002f44d549:0x71239ffce8d80f9f!8m2!3d20.5229507!4d106.2820821!16s%2Fg%2F11yry9lv6x!18m1!1e1?entry=ttu&g_ep=EgoyMDI2MDIxOC4wIKXMDSoASAFQAw%3D%3D",
+    icon: Church,
+    mapImg: "/images/nhatrai.png",
+  },
+];
+const EventSection: React.FC<propIndex> = ({ checkPage = false }) => {
+  const events = checkPage ? eventsTrai : eventsGai;
   return (
     <section className="py-16 md:py-20 bg-cream-dark relative">
       <motion.div

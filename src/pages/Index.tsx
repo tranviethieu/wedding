@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { useImagePreloader } from "@/hooks/useImagePreloader";
 import dividerGold from "@/assets/divider-gold.png";
@@ -60,8 +60,10 @@ const allImages = [
   floralTop,
   floralBottom,
 ];
-
-const Index = () => {
+export interface propIndex {
+  checkPage: boolean;
+}
+const Index: React.FC<propIndex> = ({ checkPage = false }) => {
   const [showInvite, setShowInvite] = useState(false);
   const [musicReady, setMusicReady] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -71,7 +73,7 @@ const Index = () => {
     const q = query(collection(db, "wishes"), orderBy("createdAt", "desc"));
     const unsub = onSnapshot(q, (snap) => {
       setWishes(
-        snap.docs.map((doc) => ({ id: doc.id, ...doc.data() }) as Wish),
+        snap.docs.map((doc) => ({ id: doc.id, ...doc.data() } as Wish))
       );
     });
     return unsub;
@@ -147,16 +149,16 @@ const Index = () => {
         ) : (
           <div className="relative" ref={scrollRef}>
             {/* <FloatingWishes wishes={wishes} /> */}
-            <GiftBox />
+            <GiftBox checkPage={checkPage} />
             <SnowEffect />
             <MusicPlayer autoPlay={musicReady} />
             <HeroSection />
             <CountdownSection />
             <CoupleSection />
-            <EventSection />
+            <EventSection checkPage={checkPage} />
             <TimelineSection />
             <GallerySection />
-            <WishesSection wishes={wishes} />
+            <WishesSection wishes={wishes} checkPage={checkPage} />
             <FooterSection />
             <ScrollToTop />
           </div>

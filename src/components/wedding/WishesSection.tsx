@@ -18,7 +18,10 @@ const attendingLabels: Record<string, string> = {
   no: "Không tham dự",
   maybe: "Chưa chắc chắn",
 };
-const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
+const WishesSection: React.FC<{ wishes: Wish[]; checkPage: boolean }> = ({
+  wishes,
+  checkPage,
+}) => {
   const [name, setName] = useState("");
   //useFixIOSKeyboard();
   const [message, setMessage] = useState("");
@@ -26,7 +29,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
   const [guests, setGuests] = useState(1);
   const [sending, setSending] = useState(false);
   const [selectedSuggestion, setSelectedSuggestion] = useState<number | null>(
-    null,
+    null
   );
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -37,7 +40,7 @@ const WishesSection: React.FC<{ wishes: Wish[] }> = ({ wishes }) => {
         name: name.trim(),
         message: message.trim(),
         attending,
-        role: 1,
+        role: checkPage ? 2 : 1,
         guests,
         createdAt: serverTimestamp(),
       });

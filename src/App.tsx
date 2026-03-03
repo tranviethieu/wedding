@@ -15,9 +15,10 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
+          <Route path="/" element={<Index checkPage={false} />} />
+          <Route path="/groom-family" element={<Index checkPage={true} />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<Index checkPage={false} />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

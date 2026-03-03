@@ -14,19 +14,25 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "./ui/tooltip";
+import { propIndex } from "@/pages/Index";
 
 const BANK_INFO = {
   bankName: "Techcombank",
   accountNumber: "83197700412003",
   accountHolder: "DO THI PHUONG",
 };
+const BANK_INFO_Hieu = {
+  bankName: "Viettinbank",
+  accountNumber: "0385763666",
+  accountHolder: "Tran Viet Hieu",
+};
 
-const GiftBox = () => {
+const GiftBox: React.FC<propIndex> = ({ checkPage = false }) => {
   const [open, setOpen] = useState(false);
   const [copied, setCopied] = useState(false);
-
+  const bank = checkPage ? BANK_INFO_Hieu : BANK_INFO;
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(BANK_INFO.accountNumber);
+    await navigator.clipboard.writeText(bank.accountNumber);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
@@ -73,7 +79,11 @@ const GiftBox = () => {
           <div className="flex justify-center my-4">
             <div className="w-48 h-48 bg-[#fff] border-2 border-gold-light rounded-xl flex items-center justify-center p-3">
               <img
-                src={`https://img.vietqr.io/image/${BANK_INFO.bankName}-${BANK_INFO.accountNumber}-compact.png?accountName=${encodeURIComponent(BANK_INFO.accountHolder)}`}
+                src={`https://img.vietqr.io/image/${bank.bankName}-${
+                  bank.accountNumber
+                }-compact.png?accountName=${encodeURIComponent(
+                  bank.accountHolder
+                )}`}
                 alt="QR Code chuyển khoản"
                 className="w-full h-full object-contain rounded-lg"
               />
@@ -82,14 +92,12 @@ const GiftBox = () => {
 
           {/* Bank info */}
           <div className="space-y-2 text-center font-serif">
-            <p className="text-muted-foreground text-md">
-              {BANK_INFO.bankName}
-            </p>
+            <p className="text-muted-foreground text-md">{bank.bankName}</p>
             <p className="text-foreground text-lg font-number tracking-wider">
-              {BANK_INFO.accountNumber}
+              {bank.accountNumber}
             </p>
             <p className="text-muted-foreground text-md">
-              {BANK_INFO.accountHolder}
+              {bank.accountHolder}
             </p>
           </div>
 
